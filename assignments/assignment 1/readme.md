@@ -135,5 +135,4 @@ footer {
     </footer>
 </body>
 </html>
-/* Reset default browser styles */
-*
+
