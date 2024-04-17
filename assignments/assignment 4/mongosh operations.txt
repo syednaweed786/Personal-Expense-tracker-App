@@ -1,0 +1,51 @@
+1. Connect to MongoDB:*
+bash
+mongosh mongodb://localhost:27017/mydatabase
+
+
+*2. Create a Database:*
+bash
+use mydatabase
+
+
+*3. Create a Collection and Insert Documents:*
+bash
+db.books.insertMany([
+  { title: "Book 1", author: "Author 1", genre: "Fiction", publishedYear: 2020 },
+  { title: "Book 2", author: "Author 2", genre: "Non-fiction", publishedYear: 2018 },
+  { title: "Book 3", author: "Author 3", genre: "Sci-Fi", publishedYear: 2019 }
+])
+
+
+*4. Query Documents:*
+bash
+db.books.find()
+
+
+*5. Query Documents with Filter:*
+bash
+db.books.find({ genre: "Fiction" })
+
+
+*6. Update Documents:*
+bash
+db.books.updateOne(
+  { title: "Book 1" },
+  { $set: { genre: "Fantasy" } }
+)
+
+
+*7. Delete Documents:*
+bash
+db.books.deleteOne({ title: "Book 2" })
+
+
+*8. View Databases and Collections:*
+bash
+show dbs
+show collections
+
+
+*9. Exit Mongosh:*
+bash
+exit

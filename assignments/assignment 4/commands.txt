@@ -1,0 +1,34 @@
+# Connect to MongoDB
+mongosh mongodb://localhost:27017/mydatabase
+
+# Create a Database
+use mydatabase
+
+# Create a Collection and Insert Documents
+db.books.insertMany([
+  { title: "Book 1", author: "Author 1", genre: "Fiction", publishedYear: 2020 },
+  { title: "Book 2", author: "Author 2", genre: "Non-fiction", publishedYear: 2018 },
+  { title: "Book 3", author: "Author 3", genre: "Sci-Fi", publishedYear: 2019 }
+])
+
+# Query Documents
+db.books.find()
+
+# Query Documents with Filter
+db.books.find({ genre: "Fiction" })
+
+# Update Documents
+db.books.updateOne(
+  { title: "Book 1" },
+  { $set: { genre: "Fantasy" } }
+)
+
+# Delete Documents
+db.books.deleteOne({ title: "Book 2" })
+
+# View Databases and Collections
+show dbs
+show collections
+
+# Exit Mongosh
+exit
